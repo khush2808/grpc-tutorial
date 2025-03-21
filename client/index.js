@@ -13,11 +13,9 @@ const packageDefinitions = protoLoader.loadSync(
 );
 const packages = grpc.loadPackageDefinition(packageDefinitions);
 
-const authorService = packages.com.dvs.AuthorService.service;
+const authorService = packages.com.dvs.AuthorService(GRPC_HOST,grpc.credentials.createInsecure());
 
-const grpcServer = new grpc.Server();
 
-grpcServer.addService(authorService,new AuthorService);
 
 grpcServer.bindAsync(
   GRPC_HOST,

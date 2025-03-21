@@ -4,7 +4,7 @@ package com.dvs;
 
 message AuthorModel {
 	int32 id =1;
-	string name = 2;
+	string text = 2;
 }
 message GetAllAuthorsRequestType{
 
@@ -20,5 +20,5 @@ message FindAuthorByIdResponseType{
 }
 service AuthorService{
 	rpc getAllAuthors(GetAllAuthorsRequestType) returns (GetAllAuthorsResponseType);
-	rpc findAuthorbyId(FindAuthorByIdRequestType) returns (FindAuthorByIdResponseType);
+	rpc findAuthorById(FindAuthorByIdRequestType) returns (FindAuthorByIdResponseType);
 }
